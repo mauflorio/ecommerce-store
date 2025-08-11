@@ -1,58 +1,271 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0;;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
 }
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 40px 5px 5px;
+  height: 1vh;
   position: sticky;
   top: 0;
   background: #fff;
   z-index: 100;
+  border-bottom: 1px solid #000;
 }
 
 .topbar ul {
   display: flex;
   list-style: none;
   gap: 1rem;
+  margin-bottom: 40px;
+  margin-left: 60px;
 }
 
 .topbar a {
+  display: flex;
   text-decoration: none;
   color: inherit;
   font-weight: 500;
   color: #000;
+  font-size: small;
+  font-style: bold;
+}
+
+.topbar a:hover {
+  color: #828282;
+  transition: all 0.3 ease; 
+}
+
+.topbar li {
+  display: inline;
+}
+
+.topbar li a {
+  padding: 0.5rem 1rem;
+}
+
+.topbar-right {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  margin-right: 2.5rem;
+}
+
+.topbar-right a {
+  color: #fff;
+  font-weight: 500; 
+  font-size: 10px;
+  padding: 0rem 1rem;
+}
+
+.mid-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.logo-container {
+  display: flex;
+  margin-left:0;
+  background-image: url('majostore\src\assets\logo.png'); /* Replace with logo path */
+
 }
 
 .logo {
-  display: flex;
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+  cursor: pointer;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 1em #ff6464aa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.search-bar {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px 12px 15px; /* Extra right padding for icon */
+  border: 2px solid #2DA2FF;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  color: #000;
+  background-color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: #828282;
+  font-weight: 400;
+}
+
+.search-bar input:hover {
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.search-bar input:focus {
+  border: 2px solid #FF503E;
+  color:#000000;
+  box-shadow: 0 0 5px rgba(255, 80, 62, 0.5);
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #828282;
+  cursor: pointer;
+  font-size: 18px;
+  width: 20px;
+  height: 20px;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff513e;
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav-links a:hover, :focus {
+  color: #000;
+  transition: 0.5s ease-in-out;
+  outline: none;
+}
+
+.ofertas {
+  color: #ffff68 !important;
+  font-weight: 700;
+}
+                                                                                                                            
+.ofertas:hover {
+  transform: scale(1.5);
+  color: #ffff00;
+  transition: 0.5s ease-in-out;
+  width: 200px;
+}
+
+.logo-container {
+  display: flex;
+  margin-left: 0;
+  border-radius: 50%;
+}
+
+.logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: url('./assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    padding: 20px 5px 5px;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .topbar ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 20px;
+  }
+
+  .topbar-right {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .mid-bar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .search-bar {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1rem;
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 480px) {
+  .topbar a {
+    font-size: 12px;
+  }
+
+  .topbar-right a {
+    font-size: 8px;
+    padding: 0 0.5rem;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    padding: 10px 40px 10px 10px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+
+  .ofertas:hover {
+    transform: none;
+    width: auto;
   }
 }
-
-
